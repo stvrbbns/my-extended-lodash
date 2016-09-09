@@ -13,4 +13,4 @@ Don't forget to grab lodash itself as a dependency...
 
 ## License
 
-MIT
+[MIT](LICENSE.md)

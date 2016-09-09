@@ -4,6 +4,11 @@
   "license": "MIT",
   "private": true,
   "author": "Stephen Thomas Robbins <stvrbbns@gmail.com>",
+  "description": "privately extended lodash library",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/stvrbbns/my-extended-lodash.git"
+  },
   "main": "my-extended-lodash.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
