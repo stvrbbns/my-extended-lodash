@@ -17,10 +17,18 @@ _.mixin({
     // var result = _.evaluatePredicateDescriptor(egContext, egDescriptor); // false
     // egDescriptor = { op: 'any', arg: { op: 'any', arg: { op: 'equals', arg: 15 } } };
     // result = _.evaluatePredicateDescriptor(egContext, egDescriptor); // true
+    if (this.descriptor === 'true' || this.descriptor === true) { return true; }
+    if (this.descriptor === 'false' || this.descriptor === false) { return false; }
     if (!_.isEmpty(descriptor.path)) {
       context = _.get(context, descriptor.path)
     }
     switch (descriptor.op) {
+      case 'true':
+        return true;
+        break;
+      case 'false':
+        return false;
+        break;
       case 'and':
         return _.every(descriptor.arg, function (childDescriptor) {
           return _.evaluatePredicateDescriptor(context, childDescriptor);
