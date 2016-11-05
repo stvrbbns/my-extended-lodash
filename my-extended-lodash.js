@@ -76,10 +76,15 @@ _.mixin({
         return _.isMatch(context, descriptor.arg);
         break;
       case 'regex':
-        var i = descriptor.arg.lastIndexOf('/');
-        var pattern = descriptor.arg.substring(1, i);
-        var flags = descriptor.arg.substring(i + 1);
-        var regex = new RegExp(pattern, flags);
+        let regex = null;
+        if (_.isRegExp(descriptor.arg)) {
+          regex = descriptor.arg;
+        } else {
+          let i = descriptor.arg.lastIndexOf('/');
+          let pattern = descriptor.arg.substring(1, i);
+          let flags = descriptor.arg.substring(i + 1);
+          regex = new RegExp(pattern, flags);
+        }
         return regex.test(context);
         break;
       default:
