@@ -10,6 +10,7 @@ var _ = lodash;
 
 _.mixin({
   evaluatePredicateDescriptor: function (context, descriptor) {
+    'use strict';
     // A predicate descriptor must be an object with a valid 'op' String property, an appropriate 'arg' property value, and can optionally have a 'path' property.
     // e.g.
     // var egContext = [ [1, 2, 3], [2, 4, 6], [3, 6, 9, 12, 15] ];
