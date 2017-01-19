@@ -18,7 +18,7 @@ _.mixin({
     // var result = _.evaluatePredicateDescriptor(egContext, egDescriptor); // false
     // egDescriptor = { op: 'any', arg: { op: 'any', arg: { op: 'equals', arg: 15 } } };
     // result = _.evaluatePredicateDescriptor(egContext, egDescriptor); // true
-    if (descriptor === 'true' || descriptor === true) { return true; }
+    if (descriptor === undefined || descriptor === 'true' || descriptor === true) { return true; }
     if (descriptor === 'false' || descriptor === false) { return false; }
     if (!_.isEmpty(descriptor.path)) {
       context = _.get(context, descriptor.path)
